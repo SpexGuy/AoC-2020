@@ -103,7 +103,7 @@
             "label": "build day 13",
             "type": "shell",
             "command": "zig",
-            "args": ["build", "install_day13"], // add -Drelease-safe=true or -Drelease-fast=true to optimize
+            "args": ["build", "install_day13", "-Drelease-fast=true"], // add -Drelease-safe=true or -Drelease-fast=true to optimize
             "problemMatcher": [],
             "group": "build",
         },
@@ -119,7 +119,7 @@
             "label": "build day 15",
             "type": "shell",
             "command": "zig",
-            "args": ["build", "install_day15"], // add -Drelease-safe=true or -Drelease-fast=true to optimize
+            "args": ["build", "install_day15", "-Drelease-fast=true"], // add -Drelease-safe=true or -Drelease-fast=true to optimize
             "problemMatcher": [],
             "group": "build",
         },
@@ -183,7 +183,7 @@
             "label": "build day 23",
             "type": "shell",
             "command": "zig",
-            "args": ["build", "install_day23"], // add -Drelease-safe=true or -Drelease-fast=true to optimize
+            "args": ["build", "install_day23", "-Drelease-fast=true"], // add -Drelease-safe=true or -Drelease-fast=true to optimize
             "problemMatcher": [],
             "group": "build",
         },
