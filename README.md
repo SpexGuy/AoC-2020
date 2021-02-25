@@ -1,6 +1,6 @@
 # Advent Of Code Zig 2020
 
-This repo contains my solutions from Advent of Code 2020, done in Zig.  Some of them contain only solutions for part 2.  It's based on [my zig advent of code template](https://github.com/SpexGuy/Zig-AoC-Template).
+This repo contains my solutions from Advent of Code 2020, done in Zig.  Some days only contain solutions for part 2.  It's based on [my zig advent of code template](https://github.com/SpexGuy/Zig-AoC-Template).
 
 ### How to use this repo:
 
