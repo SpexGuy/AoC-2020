@@ -1,5 +1,3 @@
-const std = @import("std");
-const Allocator = std.mem.Allocator;
 const assert = std.debug.assert;
 const print = std.debug.print;
 
@@ -21,28 +19,21 @@ pub fn main() !void {
     var turn: u32 = 0;
     var last_num: u32 = undefined;
     const input = [_]u32{ 2, 0, 1, 9, 5, 19 };
-    //const input = [_]u32{ 0, 3, 6 };
     for (input) |v, i| {
         if (turn > 0) {
             try nums.put(last_num, turn);
         }
         last_num = v;
-        // if (turn % 16 == 0) {
-        //     print("\n{: >4}: ", .{turn});
-        // }
-        // print("{: >4}, ", .{last_num});
-        // turn += 1;
+        turn += 1;
     }
+    const cutoffs = .{ 2020, 30000000 };
+    inline for (cutoffs) |cutoff, p| {
+        while (turn < cutoff) : (turn += 1) {
+            var diff = if (nums.get(last_num)) |rec| turn - rec else 0;
+            try nums.put(last_num, turn);
+            last_num = diff;
+        }
 
-    while (turn < 30000000) : (turn += 1) {
-        var diff = if (nums.get(last_num)) |rec| turn - rec else 0;
-        try nums.put(last_num, turn);
-        last_num = diff;
-        // if (turn % 16 == 0) {
-        //     print("\n{: >4}: ", .{turn});
-        // }
-        // print("{: >4}, ", .{diff});
+        print("\nPart {}: last spoken = {}\n", .{ p + 1, last_num });
     }
-
-    print("\nResult: {}\n", .{last_num});
 }
